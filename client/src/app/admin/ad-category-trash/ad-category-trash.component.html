@@ -1,0 +1,81 @@
+<div class="content">
+    <div class="page-title-container">
+        <h1 class="page-title">Danh Mục Sản Phẩm</h1>
+        <p class="page-subtitle">Quản Lý Danh Mục</p>
+    </div>
+
+    <!-- Categories Table -->
+    <div class="data-table-container">
+        <div class="table-header-admin">
+            <div class="table-title">Tất Cả Danh Mục</div>
+            <div class="table-actions">
+                <div class="search-box-admin">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search categories...">
+                </div>
+                <a [routerLink]="['/admin/category-add']" class="btn-admin btn-primary-admin">
+                    <i class="fas fa-plus"></i> Thêm Mới
+                </a>
+            </div>
+        </div>
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Tên</th>
+                    <th>Slug</th>
+                    <th>Thứ Tự</th>
+                    <th>Trạng Thái</th>
+                    <th>Số Sản Phẩm</th>
+                    <th>Hành Động</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let category of categories">
+                    <td>{{ category.id }}</td>
+                    <td>{{ category.ten_loai }}</td>
+                    <td>{{ category.slug }}</td>
+                    <td>{{ category.thu_tu }}</td>
+                    <td>
+                        <ng-container *ngIf="category.an_hien == 1">
+                            <span class="status-badge status-delivered"> Hiển Thị </span>
+                        </ng-container>
+                        <ng-container *ngIf="category.an_hien == 0">
+                            <span class="status-badge status-cancelled"> Ẩn </span>
+                        </ng-container>
+                    </td>
+                    <td>{{ category.product_count }}</td>
+                    <td>
+                        <div class="action-btns">
+                            <a href="category-edit.html?id={{ category.id }}" class="btn-icon btn-edit"><i
+                                    class="fas fa-edit"></i></a>
+                            <button class="btn-icon btn-primary-admin" (click)="restoreCategory(category.id)"><i
+                                    class="fas fa-undo"></i></button>
+                            <button class="btn-icon btn-danger-admin" (click)="forceDeleteCategory(category.id)"><i
+                                    class="fas fa-trash"></i></button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Pagination -->
+        <div class="pagination-container">
+            <ul class="pagination">
+                <li class="page-item disabled">
+                    <a href="#" class="page-link">
+                        <i class="fas fa-angle-left"></i>
+                    </a>
+                </li>
+                <li class="page-item active"><a href="#" class="page-link">1</a></li>
+                <li class="page-item"><a href="#" class="page-link">2</a></li>
+                <li class="page-item"><a href="#" class="page-link">3</a></li>
+                <li class="page-item">
+                    <a href="#" class="page-link">
+                        <i class="fas fa-angle-right"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

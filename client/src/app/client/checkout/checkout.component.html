@@ -1,0 +1,105 @@
+<main class="checkout-section">
+    <div class="container">
+        <div class="checkout-steps">
+            <div class="step active">
+                <div class="step-number">1</div>
+                <div class="step-title">Giao Hàng</div>
+            </div>
+            <!-- <div class="step">
+                <div class="step-number">2</div>
+                <div class="step-title">Thanh Toán</div>
+            </div> -->
+            <div class="step">
+                <div class="step-number">2</div>
+                <div class="step-title">Xác Nhận</div>
+            </div>
+        </div>
+        <div class="checkout-container">
+            <!-- Checkout Form -->
+            <div class="checkout-form">
+                <h2>Thông Tin Giao Hàng</h2>
+                <form id="shipping-form" (ngSubmit)="luudonhang()">
+                    <h2 class="checkout-message" [ngClass]="{'success': !isError}" *ngIf="thong_bao">
+                        {{ thong_bao}}
+                    </h2>
+                    <div class="form-group">
+                        <label for="ho_ten">Họ Tên</label>
+                        <input type="text" id="ho_ten" name="ho_ten" required [(ngModel)]="order.ho_ten">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required [(ngModel)]="order.email">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="dia_chi">Địa Chỉ</label>
+                        <input type="text" id="dia_chi" name="dia_chi" required [(ngModel)]="order.dia_chi">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="note">Ghi Chú</label>
+                        <input type="text" id="note" name="note" required [(ngModel)]="order.ghi_chu">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="shipping-method">Phương Thức Vận Chuyển</label>
+                        <div class="shipping-options">
+                            <div class="shipping-option">
+                                <input type="radio" id="standard" name="shipping" value="standard" checked>
+                                <label for="standard">
+                                    <span class="option-title">Giao Hàng Tiết Kiệm</span>
+                                    <span class="option-price">50.000đ</span>
+                                    <span class="option-time">5-7 ngày</span>
+                                </label>
+                            </div>
+                            <div class="shipping-option">
+                                <input type="radio" id="express" name="shipping" value="express">
+                                <label for="express">
+                                    <span class="option-title">Giao Hàng Nhanh</span>
+                                    <span class="option-price">120.000đ</span>
+                                    <span class="option-time">2-3 ngày</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <a href="cart.html" class="btn-secondary">Back to Cart</a>
+                        <button type="submit" class="btn-primary" [disabled]="isSubmitting">Thanh Toán</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Order Summary -->
+            <div class="order-summary" >
+                <h2>Tóm Tắt Đơn Hàng</h2>
+                <div class="summary-items">
+                    <div class="summary-item" *ngFor="let item of cartData.items">
+                        <img src="{{item.hinh}}" alt="Product">
+                        <div class="item-details">
+                            <h3>{{item.ten_sp}}</h3>
+                            <p>Số Lượng: {{item.so_luong}}</p>
+                            <p class="price">{{(item.gia_mua * item.so_luong).toLocaleString('vi-VN')}}đ</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="summary-totals">
+                    <div class="summary-row">
+                        <span>Tổng Tiền</span>
+                        <span>{{cartData.subtotal.toLocaleString('vi-VN')}}đ</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Phí Vận Chuyển</span>
+                        <span>{{cartData.shipping.toLocaleString('vi-VN')}}đ</span>
+                    </div>
+                    <div class="summary-row total">
+                        <span>Tổng Cộng</span>
+                        <span>{{cartData.total.toLocaleString('vi-VN')}}đ</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

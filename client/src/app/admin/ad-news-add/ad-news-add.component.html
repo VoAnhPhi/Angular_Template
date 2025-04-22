@@ -1,0 +1,90 @@
+<div class="content">
+    <div class="page-title-container">
+        <h1 class="page-title">Thêm Tin Tức</h1>
+        <p class="page-subtitle">Tạo mới tin tức</p>
+    </div>
+
+    <!-- Add News Form -->
+    <div class="form-container">
+        <h2 class="form-title">Thông Tin Tin Tức</h2>
+        <form id="newsForm">
+            <div class="form-group">
+                <label for="articleTitle">Tiêu Đề</label>
+                <input type="text" id="articleTitle" class="form-control" placeholder="Nhập tiêu đề tin tức" required
+                    name="tieu_de" [(ngModel)]="news.tieu_de">
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="articleCategory">Danh Mục</label>
+                    <select id="articleCategory" class="form-control" required name="id_loai"
+                        [(ngModel)]="news.id_loai">
+                        <option value="">Chọn danh mục</option>
+                        <option value="{{category.id}}" *ngFor="let category of categories">{{category.ten_loai}}
+                        </option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="articleSlug">Slug</label>
+                    <input type="text" id="articleSlug" class="form-control" placeholder="article-url-slug" name="slug"
+                        [(ngModel)]="news.slug">
+                    <div class="form-hint">Slug là phiên bản URL-friendly của tiêu đề.</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="articleExcerpt">Mô Tả Ngắn</label>
+                <textarea id="articleExcerpt" class="form-control" placeholder="Nhập mô tả ngắn" rows="3" name="mo_ta"
+                    [(ngModel)]="news.mo_ta"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="articleContent">Nội Dung</label>
+                <div class="rich-editor">
+                    <div class="editor-toolbar">
+                        <button type="button" class="editor-button"><i class="fas fa-bold"></i></button>
+                        <button type="button" class="editor-button"><i class="fas fa-italic"></i></button>
+                        <button type="button" class="editor-button"><i class="fas fa-underline"></i></button>
+                        <button type="button" class="editor-button"><i class="fas fa-heading"></i></button>
+                        <button type="button" class="editor-button"><i class="fas fa-list-ul"></i></button>
+                        <button type="button" class="editor-button"><i class="fas fa-list-ol"></i></button>
+                        <button type="button" class="editor-button"><i class="fas fa-quote-right"></i></button>
+                        <button type="button" class="editor-button"><i class="fas fa-link"></i></button>
+                        <button type="button" class="editor-button"><i class="fas fa-image"></i></button>
+                    </div>
+                    <textarea id="articleExcerpt" class="form-control" placeholder="Nhập nội dung của bạn ở đây..."
+                        rows="3" name="noi_dung" [(ngModel)]="news.noi_dung"></textarea>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="featuredImage">Hình Ảnh</label>
+                <div class="custom-file-upload">
+                    <input type="file" id="featuredImage" accept="image/*" name="hinh"
+                        (change)="onFileSelected($event)">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                    <span>Click để tải lên hoặc kéo thả</span>
+                    <span>SVG, PNG, JPG hoặc GIF (max. 5MB)</span>
+                </div>
+                <p>Preview hình ảnh:</p>
+                <img [src]="previewImageUrl" alt="Preview"
+                    style="max-width: 200px; border: 1px solid #ccc; padding: 4px;" />
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="publicationDate">Ngày Đăng</label>
+                    <input type="date" id="publicationDate" class="form-control" name="ngay" [(ngModel)]="news.ngay">
+                </div>
+                <div class="form-group">
+                    <label for="articleStatus">Trạng Thái</label>
+                    <select id="articleStatus" class="form-control" name="an_hien" [(ngModel)]="news.an_hien">
+                        <option value="1">Hiển thị</option>
+                        <option value="0">Ẩn</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-actions">
+                <button type="submit" class="btn-admin btn-primary-admin" id="saveArticle" (click)="createNews()">
+                    Tạo Tin Tức
+                </button>
+                <a [routerLink]='["/admin/news"]' class="btn-admin btn-secondary-admin">Hủy Bỏ</a>
+            </div>
+        </form>
+    </div>
+</div>

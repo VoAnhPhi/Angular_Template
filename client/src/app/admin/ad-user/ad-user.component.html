@@ -1,0 +1,86 @@
+<div class="content">
+    <div class="page-title-container">
+        <h1 class="page-title">Người Dùng</h1>
+        <p class="page-subtitle">Quản lý tài khoản người dùng</p>
+    </div>
+
+    <!-- Users Table -->
+    <div class="data-table-container">
+        <div class="table-header-admin">
+            <div class="table-title">Tất Cả Người Dùng</div>
+            <div class="table-actions">
+                <div class="search-box-admin">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search users...">
+                </div>
+                <a href="user-add.html" class="btn-admin btn-primary-admin">
+                    <i class="fas fa-plus"></i> Thêm Người Dùng
+                </a>
+            </div>
+        </div>
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Họ Tên</th>
+                    <th>Email</th>
+                    <th>Số Điện Thoại</th>
+                    <th>Địa Chỉ</th>
+                    <th>Ngày Tạo</th>
+                    <th>Trạng Thái</th>
+                    <th>Hành Động</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let user of user">
+                    <td>{{user.id}}</td>
+                    <td>
+                        <div class="customer-info">
+                            <div class="customer-avatar">
+                                <img src="https://via.placeholder.com/150" alt="User Avatar">
+                            </div>
+                            <span>{{user.ho_ten}}</span>
+                        </div>
+                    </td>
+                    <td>{{user.email}}</td>
+                    <td>{{user.dien_thoai}}</td>
+                    <td>{{user.dia_chi}}</td>
+                    <td>{{user.created_at | date:'dd/MM/yyyy'}}</td>
+                    <td>
+                        <ng-container *ngIf="user.vai_tro === 1">
+                            <span class="status-badge status-delivered">Admin</span>
+                        </ng-container>
+                        <ng-container *ngIf="user.vai_tro === 0">
+                            <span class="status-badge status-pending">User</span>
+                        </ng-container>
+                    </td>
+                    <td>
+                        <div class="action-btns">
+                            <a [routerLink]="['/admin/user-edit', user.id]" class="btn-icon btn-edit"><i class="fas fa-edit"></i></a>
+                            <button class="btn-icon btn-delete" (click)="deleteUser(user.id)"><i class="fas fa-trash"></i></button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Pagination -->
+        <div class="pagination-container">
+            <ul class="pagination">
+                <li class="page-item disabled">
+                    <a href="#" class="page-link">
+                        <i class="fas fa-angle-left"></i>
+                    </a>
+                </li>
+                <li class="page-item active"><a href="#" class="page-link">1</a></li>
+                <li class="page-item"><a href="#" class="page-link">2</a></li>
+                <li class="page-item"><a href="#" class="page-link">3</a></li>
+                <li class="page-item">
+                    <a href="#" class="page-link">
+                        <i class="fas fa-angle-right"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

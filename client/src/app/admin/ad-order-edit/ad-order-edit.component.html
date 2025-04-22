@@ -1,0 +1,118 @@
+<div class="content">
+    <div class="page-title-container">
+        <h1 class="page-title">Cập Nhật Trạng Thái Đơn Hàng</h1>
+        <div class="order-actions">
+            <a href="order-detail.html?id=9871" class="btn-admin btn-secondary-admin">
+                <i class="fas fa-arrow-left"></i> Quay Lại Chi Tiết Đơn Hàng
+            </a>
+            <a href="orders.html" class="btn-admin btn-outline-secondary-admin">
+                <i class="fas fa-list"></i> Tất Cả Đơn Hàng
+            </a>
+        </div>
+    </div>
+
+    <!-- Order Info Card -->
+    <div class="order-info-summary">
+        <div class="order-summary-section">
+            <div class="summary-label">Mã Đơn Hàng:</div>
+            <div class="summary-value">#ORD-2023-9871</div>
+        </div>
+        <div class="order-summary-section">
+            <div class="summary-label">Khách Hàng:</div>
+            <div class="summary-value">John Doe</div>
+        </div>
+        <div class="order-summary-section">
+            <div class="summary-label">Ngày Đặt:</div>
+            <div class="summary-value">Nov 10, 2023</div>
+        </div>
+        <div class="order-summary-section">
+            <div class="summary-label">Tổng:</div>
+            <div class="summary-value">$950.58</div>
+        </div>
+        <div class="order-summary-section">
+            <div class="summary-label">Trạng Thái Hiện Tại:</div>
+            <div class="summary-value">
+                <span class="status-badge status-pending" id="currentStatusBadge">Đang Chờ</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Status Update Form -->
+    <div class="form-container">
+        <h2 class="form-title">Cập Nhật Trạng Thái</h2>
+        <form id="statusForm">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="newStatus">Trạng Thái Mới</label>
+                    <select id="newStatus" class="form-control" required>
+                        <option value="">Chọn trạng thái mới</option>
+                        <option value="pending">Đang Chờ</option>
+                        <option value="processing">Đang Xử Lý</option>
+                        <option value="shipped">Đã Giao Hàng</option>
+                        <option value="delivered">Đã Giao Hàng</option>
+                        <option value="canceled">Đã Hủy</option>
+                        <option value="refunded">Đã Hoàn Tiền</option>
+                        <option value="on_hold">Đang Chờ</option>
+                        <option value="failed">Thất Bại</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="notifyCustomer">Thông Báo Khách Hàng</label>
+                    <div class="checkbox-container">
+                        <input type="checkbox" id="notifyCustomer" checked>
+                        <label for="notifyCustomer">Gửi email thông báo cho khách hàng</label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="trackingNumber">Mã Vận Chuyển <span class="optional-label">(required for Đã Giao Hàng)</span></label>
+                <div class="input-group">
+                    <input type="text" id="trackingNumber" class="form-control" placeholder="Enter tracking number">
+                    <select id="shippingCarrier" class="form-control" style="max-width: 150px;">
+                        <option value="">Chọn hãng vận chuyển</option>
+                        <option value="usps">USPS</option>
+                        <option value="fedex">FedEx</option>
+                        <option value="ups">UPS</option>
+                        <option value="dhl">DHL</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="statusNote">Ghi Chú Trạng Thái</label>
+                <textarea id="statusNote" class="form-control" placeholder="Thêm ghi chú về sự thay đổi trạng thái (tùy chọn)" rows="3"></textarea>
+            </div>
+            <div class="form-actions">
+                <button type="submit" class="btn-admin btn-primary-admin" id="updateStatus">Cập Nhật Trạng Thái</button>
+                <button type="button" class="btn-admin btn-secondary-admin" id="cancelUpdate">Hủy</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Status History -->
+    <div class="order-info-card">
+        <div class="card-header">
+            <h3><i class="fas fa-history"></i> Lịch Sử Trạng Thái</h3>
+        </div>
+        <div class="timeline">
+            <ul class="timeline-list" id="statusTimeline">
+                <li class="timeline-item">
+                    <div class="timeline-point"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-title">Trạng Thái Đã Cập Nhật Thành <span class="status-badge status-pending">Đang Chờ</span></div>
+                        <div class="timeline-time">Nov 10, 2023 - 11:15 AM</div>
+                        <p>Trạng thái đơn hàng đã được thay đổi từ "Mới" thành "Đang Chờ". <br>
+                           <span class="text-muted">Bởi: Admin User</span></p>
+                    </div>
+                </li>
+                <li class="timeline-item">
+                    <div class="timeline-point"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-title">Đơn Hàng Đã Được Tạo Với Trạng Thái <span class="status-badge status-new">Mới</span></div>
+                        <div class="timeline-time">Nov 10, 2023 - 10:23 AM</div>
+                        <p>Đơn hàng #ORD-2023-9871 đã được đặt bởi khách hàng.</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

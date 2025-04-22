@@ -1,0 +1,125 @@
+<div class="content">
+    <div class="page-title-container">
+        <h1 class="page-title">Edit User</h1>
+        <p class="page-subtitle">Update user information</p>
+    </div>
+
+    <!-- Edit User Form -->
+    <div class="form-container">
+        <div class="form-row">
+            <div class="form-group" style="text-align: center; width: 100%;">
+                <div class="customer-avatar-lg">
+                    <img src="https://via.placeholder.com/150" alt="User Avatar" id="avatarPreview">
+                </div>
+                <input type="file" id="userAvatar" accept="image/*" style="display: none;">
+                <button type="button" class="btn-admin btn-primary-admin" style="margin-top: 10px;" id="changeAvatarBtn">
+                    <i class="fas fa-camera"></i> Change Avatar
+                </button>
+            </div>
+        </div>
+
+        <h2 class="form-title">Account Information</h2>
+        <form id="userForm">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="firstName">First Name</label>
+                    <input type="text" id="firstName" class="form-control" placeholder="First Name" value="John"
+                        required>
+                </div>
+                <div class="form-group">
+                    <label for="lastName">Last Name</label>
+                    <input type="text" id="lastName" class="form-control" placeholder="Last Name" value="Doe" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" class="form-control" placeholder="Email Address"
+                        value="john.doe@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" class="form-control" placeholder="Phone Number" value="(555) 123-4567">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="userRole">Role</label>
+                    <select id="userRole" class="form-control" required>
+                        <option value="administrator" selected>Administrator</option>
+                        <option value="manager">Manager</option>
+                        <option value="editor">Editor</option>
+                        <option value="customer">Customer</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="userStatus">Status</label>
+                    <select id="userStatus" class="form-control" required>
+                        <option value="1" selected>Active</option>
+                        <option value="0">Inactive</option>
+                    </select>
+                </div>
+            </div>
+
+            <h2 class="form-title">Change Password</h2>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="newPassword">New Password</label>
+                    <input type="password" id="newPassword" class="form-control"
+                        placeholder="Leave blank to keep current password">
+                </div>
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <input type="password" id="confirmPassword" class="form-control"
+                        placeholder="Leave blank to keep current password">
+                </div>
+            </div>
+
+            <h2 class="form-title">Address Information</h2>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="address1">Address Line 1</label>
+                    <input type="text" id="address1" class="form-control" placeholder="Address Line 1"
+                        value="123 Main Street">
+                </div>
+                <div class="form-group">
+                    <label for="address2">Address Line 2</label>
+                    <input type="text" id="address2" class="form-control" placeholder="Address Line 2" value="Apt 4B">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="city">City</label>
+                    <input type="text" id="city" class="form-control" placeholder="City" value="New York">
+                </div>
+                <div class="form-group">
+                    <label for="state">State/Province</label>
+                    <input type="text" id="state" class="form-control" placeholder="State/Province" value="NY">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="postalCode">Postal Code</label>
+                    <input type="text" id="postalCode" class="form-control" placeholder="Postal Code" value="10001">
+                </div>
+                <div class="form-group">
+                    <label for="country">Country</label>
+                    <select id="country" class="form-control">
+                        <option value="">Select Country</option>
+                        <option value="US" selected>United States</option>
+                        <option value="CA">Canada</option>
+                        <option value="UK">United Kingdom</option>
+                        <option value="AU">Australia</option>
+                        <option value="DE">Germany</option>
+                        <option value="FR">France</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-actions">
+                <button type="button" class="btn-admin btn-primary-admin" id="updateUser">Update User</button>
+                <a href="users.html" class="btn-admin btn-secondary-admin">Cancel</a>
+            </div>
+        </form>
+    </div>
+</div>

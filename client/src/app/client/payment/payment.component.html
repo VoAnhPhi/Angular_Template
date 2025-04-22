@@ -1,0 +1,144 @@
+<main class="payment-section">
+    <div class="container">
+        <div class="checkout-steps">
+            <div class="step completed">
+                <div class="step-number">1</div>
+                <div class="step-title">Giao Hàng</div>
+            </div>
+            <div class="step active">
+                <div class="step-number">2</div>
+                <div class="step-title">Thanh Toán</div>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <div class="step-title">Xác Nhận</div>
+            </div>
+        </div>
+        <div class="payment-container">
+            <!-- Checkout Steps -->
+
+            <!-- Payment Form -->
+            <div class="payment-form">
+                <h2>Thông Tin Thanh Toán</h2>
+                <form id="payment-form">
+                    <!-- <div class="form-group">
+                        <label for="card-name">Tên Trên Thẻ</label>
+                        <input type="text" id="card-name" required>
+                    </div> -->
+
+                    <!-- <div class="form-group">
+                        <label for="card-number">Card Number</label>
+                        <div class="card-input-wrapper">
+                            <input type="text" id="card-number" required pattern="[0-9]{16}" maxlength="16">
+                            <div class="card-icons">
+                                <i class="fab fa-cc-visa"></i>
+                                <i class="fab fa-cc-mastercard"></i>
+                                <i class="fab fa-cc-amex"></i>
+                            </div>
+                        </div>
+                    </div> -->
+
+                    <!-- <div class="form-row">
+                        <div class="form-group">
+                            <label for="expiry">Expiry Date</label>
+                            <div class="expiry-inputs">
+                                <input type="text" id="expiry-month" placeholder="MM" required pattern="[0-9]{2}" maxlength="2">
+                                <span>/</span>
+                                <input type="text" id="expiry-year" placeholder="YY" required pattern="[0-9]{2}" maxlength="2">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="cvv">CVV</label>
+                            <input type="text" id="cvv" required pattern="[0-9]{3,4}" maxlength="4">
+                        </div>
+                    </div> -->
+
+                    <!-- <div class="form-group">
+                        <label for="billing-address">Billing Address</label>
+                        <input type="text" id="billing-address" required>
+                    </div> -->
+
+                    <!-- <div class="form-row">
+                        <div class="form-group">
+                            <label for="billing-city">City</label>
+                            <input type="text" id="billing-city" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="billing-state">State/Province</label>
+                            <input type="text" id="billing-state" required>
+                        </div>
+                    </div> -->
+
+                    <!-- <div class="form-row">
+                        <div class="form-group">
+                            <label for="billing-postal">Postal Code</label>
+                            <input type="text" id="billing-postal" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="billing-country">Country</label>
+                            <select id="billing-country" required>
+                                <option value="">Select Country</option>
+                                <option value="US">United States</option>
+                                <option value="CA">Canada</option>
+                                <option value="GB">United Kingdom</option>
+                                <option value="AU">Australia</option>
+                            </select>
+                        </div>
+                    </div> -->
+
+                    <div class="form-actions">
+                        <a href="checkout.html" class="btn-secondary">Về Giao Hàng</a>
+                        <button type="submit" class="btn-primary">Thanh Toán</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Order Summary -->
+            <div class="order-summary">
+                <h2>Tóm Tắt Đơn Hàng</h2>
+                <div class="summary-items">
+                    <div class="summary-item">
+                        <img src="https://via.placeholder.com/80" alt="Product">
+                        <div class="item-details">
+                            <h3>Tên Sản Phẩm</h3>
+                            <p>Số Lượng: 1</p>
+                            <p class="price">$99.99</p>
+                        </div>
+                    </div>
+                    <div class="summary-item">
+                        <img src="https://via.placeholder.com/80" alt="Product">
+                        <div class="item-details">
+                            <h3>Tên Sản Phẩm 2</h3>
+                            <p>Số Lượng: 1</p>
+                            <p class="price">$149.99</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="summary-totals">
+                    <div class="summary-row">
+                        <span>Tổng Tiền</span>
+                        <span>$249.98</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Phí Vận Chuyển</span>
+                        <span>$5.99</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Thuế</span>
+                        <span>$25.00</span>
+                    </div>
+                    <div class="summary-row total">
+                        <span>Tổng Cộng</span>
+                        <span>$280.97</span>
+                    </div>
+                </div>
+
+                <div class="secure-payment">
+                    <i class="fas fa-lock"></i>
+                    <span>Thanh Toán An Toàn</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

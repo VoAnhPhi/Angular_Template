@@ -1,0 +1,130 @@
+<!-- Banner nhỏ -->
+<section class="page-banner">
+    <div class="container">
+        <h1>Kết quả tìm kiếm cho "{{key}}"</h1>
+    </div>
+</section>
+
+<!-- Main Content -->
+<main class="container main-content">
+    <!-- Sidebar: Danh mục & Lọc theo giá -->
+    <aside class="sidebar">
+        <!-- Thương hiệu -->
+        <section class="category">
+            <h2>Thương hiệu</h2>
+            <app-category></app-category>
+        </section>
+
+
+        <!-- Lọc theo giá -->
+        <section class="price-filter">
+            <h2>Lọc theo giá</h2>
+            <div class="filter-inputs">
+                <input type="number" name="min-price" placeholder="Giá thấp nhất">
+                <input type="number" name="max-price" placeholder="Giá cao nhất">
+            </div>
+            <button type="button" class="btn filter-btn">Áp dụng</button>
+        </section>
+
+        <!-- Đánh giá -->
+        <section class="rating-filter">
+            <h2>Đánh giá</h2>
+            <ul class="rating-list">
+                <li>
+                    <a href="#">
+                        <div class="stars">
+                            <span class="star">★★★★★</span>
+                        </div>
+                        <span class="rating-text">5 sao</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="stars">
+                            <span class="star">★★★★☆</span>
+                        </div>
+                        <span class="rating-text">4 sao trở lên</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="stars">
+                            <span class="star">★★★☆☆</span>
+                        </div>
+                        <span class="rating-text">3 sao trở lên</span>
+                    </a>
+                </li>
+            </ul>
+        </section>
+    </aside>
+
+    <!-- Sản phẩm & Sắp xếp -->
+    <section class="products-section">
+        <!-- Thanh sắp xếp -->
+        <div class="sort-bar">
+            <span>Sắp xếp theo:</span>
+            <ul>
+                <li><a href="#" class="active">Mới nhất</a></li>
+                <li><a href="#">Bán chạy</a></li>
+                <li><a href="#">Giá tăng dần</a></li>
+                <li><a href="#">Giá giảm dần</a></li>
+                <li><a href="#">Khuyến mãi</a></li>
+            </ul>
+        </div>
+
+        <!-- Lưới sản phẩm -->
+        <div class="products-grid">
+            <div class="product-item" *ngFor="let product of product_array">
+                <div class="product-badge new">Mới</div>
+                <img src="{{product.hinh}}" alt="{{product.ten_sp}}">
+                <a [routerLink]="['/product', product.id]">
+                    <h3>{{product.ten_sp}}</h3>
+                </a>
+                <div class="product-rating">
+                    <div class="stars">★★★★☆</div>
+                    <span class="rating-count">{{product.luot_xem}}</span>
+                </div>
+                <p class="price">{{product.gia_km.toLocaleString('vi-VN')}}₫</p>
+                <button class="add-to-cart">Thêm vào giỏ</button>
+            </div>
+            <div *ngIf="product_array.length === 0" class="no-products">
+                <p>Không tìm thấy sản phẩm nào.</p>
+            </div>
+        </div>
+
+        <div class="pagination" *ngIf="total_pages > 1">
+            <!-- Nút "Trước" -->
+            <a [routerLink]="['/search']" [queryParams]="{ key: key, page: current_page - 1 }"
+                [class.disabled]="current_page === 1">
+                « Trước
+            </a>
+
+            <!-- Hiển thị danh sách trang -->
+            <ng-container *ngFor="let page of getVisiblePages()">
+                <!-- Hiển thị số trang -->
+                <a *ngIf="page !== -1" [routerLink]="['/search']" [queryParams]="{ key: key, page: page }"
+                    [class.active]="current_page === page">
+                    {{ page }}
+                </a>
+
+                <!-- Hiển thị dấu "..." -->
+                <span *ngIf="page === -1">...</span>
+            </ng-container>
+
+            <!-- Nút "Tiếp" -->
+            <a [routerLink]="['/search']" [queryParams]="{ key: key, page: current_page + 1 }"
+                [class.disabled]="current_page === total_pages">
+                Tiếp »
+            </a>
+        </div>
+    </section>
+</main>
+
+<!-- Promotional Banner -->
+<section class="promo-banner">
+    <div class="promo-content">
+        <h2>Giảm giá đến 30%</h2>
+        <p>Cho tất cả sản phẩm Apple trong tháng này</p>
+        <button class="promo-btn">Xem ngay</button>
+    </div>
+</section>

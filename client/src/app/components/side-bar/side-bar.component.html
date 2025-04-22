@@ -1,0 +1,86 @@
+<aside class="sidebar-admin">
+    <div class="sidebar-logo">
+        <h2>Quản Trị Admin</h2>
+    </div>
+    <nav class="sidebar-nav">
+        <div class="nav-section">
+            <div class="nav-section-title">Quản Lý</div>
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a [routerLink]="['/admin']" class="nav-link">
+                        <i class="fas fa-tachometer-alt"></i>
+                        <span class="nav-text">Trang Chủ</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="nav-section">
+            <div class="nav-section-title">Danh Mục</div>
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a [routerLink]="['/admin/category']" class="nav-link">
+                        <i class="fas fa-tags"></i>
+                        <span class="nav-text">Danh Mục</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a [routerLink]="['/admin/product']" class="nav-link">
+                        <i class="fas fa-box"></i>
+                        <span class="nav-text">Sản Phẩm</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="nav-section">
+            <div class="nav-section-title">Đơn Hàng</div>
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a [routerLink]="['/admin/order']" class="nav-link">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="nav-text">Đơn Hàng</span>
+                        <span class="badge">5</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="nav-section">
+            <div class="nav-section-title">Tin Tức</div>
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a [routerLink]="['/admin/news']" class="nav-link">
+                        <i class="fas fa-newspaper"></i>
+                        <span class="nav-text">Tin Tức</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a [routerLink]="['/admin/news-category']" class="nav-link">
+                        <i class="fas fa-folder"></i>
+                        <span class="nav-text">Danh Mục Tin Tức</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="nav-section">
+            <div class="nav-section-title">Người Dùng</div>
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a [routerLink]="['/admin/user']" class="nav-link">
+                        <i class="fas fa-users"></i>
+                        <span class="nav-text">Người Dùng</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="nav-section">
+            <div class="nav-section-title">Cài Đặt</div>
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a [routerLink]="['/admin/setting']" class="nav-link">
+                        <i class="fas fa-cog"></i>
+                        <span class="nav-text">Cài Đặt</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</aside>

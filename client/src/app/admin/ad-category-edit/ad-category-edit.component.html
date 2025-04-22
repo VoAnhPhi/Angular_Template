@@ -1,0 +1,41 @@
+<div class="content">
+    <div class="page-title-container">
+        <h1 class="page-title">Sửa Danh Mục</h1>
+        <p class="page-subtitle">Sửa Danh Mục</p>
+    </div>
+
+    <!-- Add Category Form -->
+    <div class="form-container">
+        <h2 class="form-title">Thông Tin Danh Mục</h2>
+        <form id="categoryForm" (ngSubmit)="updateCategory()">
+            <div class="form-group">
+                <label for="categoryName">Tên Danh Mục</label>
+                <input type="text" id="ten_loai" name="ten_loai" class="form-control" placeholder="Nhập tên danh mục"
+                    required [(ngModel)]="newCategory.ten_loai">
+            </div>
+            <div class="form-group">
+                <label for="categorySlug">URL Slug</label>
+                <input type="text" id="slug" name="slug" class="form-control" placeholder="category-slug"
+                    [(ngModel)]="newCategory.slug">
+                <div class="form-hint">Slug là phiên bản URL-friendly của tên danh mục. Nó thường là tất cả chữ thường
+                    và chỉ chứa các ký tự chữ cái, số và dấu gạch ngang.</div>
+            </div>
+            <div class="form-group">
+                <label for="categoryOrder">Thứ Tự</label>
+                <input type="number" id="thu_tu" name="thu_tu" class="form-control" placeholder="Nhập thứ tự"
+                    [(ngModel)]="newCategory.thu_tu">
+            </div>
+            <div class="form-group">
+                <label for="categoryStatus">Trạng Thái</label>
+                <select id="an_hien" name="an_hien" class="form-control" [(ngModel)]="newCategory.an_hien">
+                    <option value="1">Hiển Thị</option>
+                    <option value="0">Ẩn</option>
+                </select>
+            </div>
+            <div class="form-actions">
+                <button type="submit" class="btn-admin btn-primary-admin" id="saveCategory">Lưu Danh Mục</button>
+                <a [routerLink]="['/admin/category']" class="btn-admin btn-secondary-admin">Hủy</a>
+            </div>
+        </form>
+    </div>
+</div>

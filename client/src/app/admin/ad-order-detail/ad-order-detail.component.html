@@ -1,0 +1,272 @@
+<div class="content">
+    <div class="page-title-container">
+        <h1 class="page-title">Đơn Hàng #ORD-2023-9871</h1>
+        <div class="order-actions">
+            <a href="orders.html" class="btn-admin btn-secondary-admin">
+                <i class="fas fa-arrow-left"></i> Quay Lại
+            </a>
+            <button class="btn-admin btn-primary-admin" id="printInvoice">
+                <i class="fas fa-print"></i> In Hóa Đơn
+            </button>
+            <a href="order-status.html?id=9871" class="btn-admin btn-success-admin">
+                <i class="fas fa-check"></i> Cập Nhật Trạng Thái
+            </a>
+        </div>
+    </div>
+
+    <!-- Order Details Grid -->
+    <div class="order-detail-grid">
+        <!-- Order Information -->
+        <div class="order-info-card">
+            <div class="card-header">
+                <h3><i class="fas fa-info-circle"></i> Order Information</h3>
+            </div>
+            <div class="info-list">
+                <div class="info-item">
+                    <div class="info-title">Order Number:</div>
+                    <div class="info-value">#ORD-2023-9871</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-title">Order Date:</div>
+                    <div class="info-value">Nov 10, 2023</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-title">Order Status:</div>
+                    <div class="info-value">
+                        <span class="status-badge status-pending">Pending</span>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="info-title">Payment Method:</div>
+                    <div class="info-value">Credit Card (Visa ending in 4321)</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-title">Payment Status:</div>
+                    <div class="info-value">
+                        <span class="status-badge status-delivered">Paid</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Customer Information -->
+        <div class="order-info-card">
+            <div class="card-header-admin">
+                <h3><i class="fas fa-user"></i> Thông Tin Khách Hàng</h3>
+            </div>
+            <div class="customer-details">
+                <div class="customer-avatar-lg">
+                    <img src="https://via.placeholder.com/150" alt="Customer Avatar">
+                </div>
+                <div class="customer-details-info">
+                    <h4>John Doe</h4>
+                    <p><i class="fas fa-envelope"></i> john.doe&#64;example.com</p>
+                    <p><i class="fas fa-phone"></i> (555) 123-4567</p>
+                    <p><i class="fas fa-clock"></i> Customer since: Jan 15, 2023</p>
+                    <p><i class="fas fa-shopping-cart"></i> Total orders: 5</p>
+                    <a href="user-edit.html?id=1" class="btn btn-primary">
+                        <i class="fas fa-user-edit"></i> View Customer Profile
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Shipping Information -->
+        <div class="order-info-card">
+            <div class="card-header-admin">
+                <h3><i class="fas fa-truck"></i> Thông Tin Vận Chuyển</h3>
+            </div>
+            <div class="address-section">
+                <h5>Địa Chỉ Vận Chuyển</h5>
+                <div class="address-box">
+                    <p><strong>John Doe</strong></p>
+                    <p>123 Main Street</p>
+                    <p>Apt 4B</p>
+                    <p>New York, NY 10001</p>
+                    <p>United States</p>
+                    <p><i class="fas fa-phone"></i> (555) 123-4567</p>
+                </div>
+
+                <h5>Phương Thức Vận Chuyển</h5>
+                <p>Vận Chuyển Tiêu Chuẩn (3-5 ngày làm việc)</p>
+
+                <h5>Tracking Number</h5>
+                <p><a href="#" class="btn btn-sm btn-outline-primary">
+                        <i class="fas fa-shipping-fast"></i> #TRK12345678901
+                    </a></p>
+            </div>
+        </div>
+
+        <!-- Billing Information -->
+        <div class="order-info-card">
+            <div class="card-header-admin">
+                <h3><i class="fas fa-file-invoice-dollar"></i> Thông Tin Thanh Toán</h3>
+            </div>
+            <div class="address-section">
+                <h5>Địa Chỉ Thanh Toán</h5>
+                <div class="address-box">
+                    <p><strong>John Doe</strong></p>
+                    <p>123 Main Street</p>
+                    <p>Apt 4B</p>
+                    <p>New York, NY 10001</p>
+                    <p>United States</p>
+                    <p><i class="fas fa-phone"></i> (555) 123-4567</p>
+                </div>
+
+                <h5>Phương Thức Thanh Toán</h5>
+                <p><i class="fab fa-cc-visa"></i> Visa ending in 4321</p>
+                <p>Card Holder: John Doe</p>
+                <p>Expiration: 05/25</p>
+            </div>
+        </div>
+
+        <!-- Order Items -->
+        <div class="order-info-card" style="grid-column: span 2;">
+            <div class="card-header-admin">
+                <h3><i class="fas fa-box-open"></i> Sản Phẩm Đơn Hàng</h3>
+            </div>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Sản Phẩm</th>
+                        <th>Mã SKU</th>
+                        <th>Giá</th>
+                        <th>Số Lượng</th>
+                        <th>Tổng</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="product-info">
+                                <div class="product-image">
+                                    <img src="https://via.placeholder.com/150" alt="Product Image">
+                                </div>
+                                <div>
+                                    <strong>Smartphone X12</strong>
+                                    <div>6.5-inch, 256GB, Black</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>PHN-1001</td>
+                        <td>$699.99</td>
+                        <td>1</td>
+                        <td>$699.99</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="product-info">
+                                <div class="product-image">
+                                    <img src="https://via.placeholder.com/150" alt="Product Image">
+                                </div>
+                                <div>
+                                    <strong>Wireless Headphones</strong>
+                                    <div>Noise-cancelling, Black</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>AUD-3003</td>
+                        <td>$149.99</td>
+                        <td>1</td>
+                        <td>$149.99</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="product-info">
+                                <div class="product-image">
+                                    <img src="https://via.placeholder.com/150" alt="Product Image">
+                                </div>
+                                <div>
+                                    <strong>Phone Case</strong>
+                                    <div>Protective Case for X12, Clear</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>ACC-5007</td>
+                        <td>$29.99</td>
+                        <td>1</td>
+                        <td>$29.99</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="4" style="text-align: right;"><strong>Subtotal</strong></td>
+                        <td>$879.97</td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" style="text-align: right;"><strong>Shipping</strong></td>
+                        <td>$12.50</td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" style="text-align: right;"><strong>Tax (8.875%)</strong></td>
+                        <td>$78.11</td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" style="text-align: right;"><strong>Discount</strong></td>
+                        <td>-$20.00</td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" style="text-align: right;"><strong>Total</strong></td>
+                        <td><strong>$950.58</strong></td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+
+        <!-- Order Timeline -->
+        <div class="order-info-card" style="grid-column: span 2;">
+            <div class="card-header-admin">
+                <h3><i class="fas fa-history"></i> Lịch Sử Đơn Hàng</h3>
+            </div>
+            <div class="timeline">
+                <ul class="timeline-list">
+                    <li class="timeline-item">
+                        <div class="timeline-point"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-title">Đơn Hàng Được Tạo</div>
+                            <div class="timeline-time">Nov 10, 2023 - 10:23 AM</div>
+                            <p>Đơn Hàng #ORD-2023-9871 được đặt bởi khách hàng.</p>
+                        </div>
+                    </li>
+                    <li class="timeline-item">
+                        <div class="timeline-point"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-title">Thanh Toán Được Nhận</div>
+                            <div class="timeline-time">Nov 10, 2023 - 10:25 AM</div>
+                            <p>Thanh Toán $950.58 đã được thành công (Mã Giao Dịch: TXN54321).</p>
+                        </div>
+                    </li>
+                    <li class="timeline-item">
+                        <div class="timeline-point"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-title">Trạng Thái Đơn Hàng Được Cập Nhật</div>
+                            <div class="timeline-time">Nov 10, 2023 - 11:15 AM</div>
+                            <p>Trạng Thái đơn hàng đã được thay đổi từ "Mới" thành "Đang Chờ".</p>
+                        </div>
+                    </li>
+                    <li class="timeline-item">
+                        <div class="timeline-point"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-title">Ghi Chú Được Thêm</div>
+                            <div class="timeline-time">Nov 10, 2023 - 2:40 PM</div>
+                            <p>Ghi chú: "Khách hàng yêu cầu giao hàng nhanh hơn nếu có thể. Đã gọi điện cho khách hàng để
+                                thông báo rằng đơn hàng đã được xử lý với vận chuyển tiêu chuẩn."</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Add Note Form -->
+            <div style="padding: 20px;">
+                <h4>Thêm Ghi Chú</h4>
+                <div class="form-group">
+                    <textarea id="orderNote" class="form-control" placeholder="Thêm ghi chú về đơn hàng..."
+                        rows="3"></textarea>
+                </div>
+                <button type="button" class="btn-admin btn-primary-admin" id="addNoteBtn">
+                    <i class="fas fa-plus"></i> Thêm Ghi Chú
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

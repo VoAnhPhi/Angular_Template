@@ -1,0 +1,52 @@
+<div class="content">
+    <div class="page-title-container">
+        <h1 class="page-title">Thêm Danh Mục Tin Tức</h1>
+        <p class="page-subtitle">Tạo Danh Mục Tin Tức Mới</p>
+        <a [routerLink]="['/admin/news-category']" class="btn-admin btn-secondary-admin">
+            <i class="fas fa-arrow-left"></i> Quay Lại Danh Mục
+        </a>
+    </div>
+
+    <!-- Category Form -->
+    <div class="form-container">
+        <form id="categoryForm">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="categoryName">Tên Danh Mục <span class="required">*</span></label>
+                    <input type="text" id="categoryName" class="form-control" placeholder="Nhập tên danh mục" required
+                        [(ngModel)]="newsCategoryForm.ten_loai" name="ten_loai">
+                </div>
+                <div class="form-group">
+                    <label for="categorySlug">Slug <span class="required">*</span></label>
+                    <input type="text" id="categorySlug" class="form-control" placeholder="Nhập URL slug" required
+                        [(ngModel)]="newsCategoryForm.slug" name="slug">
+                    <small class="form-text text-muted">Đây sẽ được sử dụng trong URL cho danh mục này (ví dụ:
+                        /news/technology)</small>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="categoryStatus">Trạng Thái</label>
+                    <select id="categoryStatus" class="form-control" [(ngModel)]="newsCategoryForm.an_hien"
+                        name="an_hien">
+                        <option value="1">Hiển Thị</option>
+                        <option value="0">Ẩn</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="categoryStatus">Thứ Tự</label>
+                    <input type="number" id="categoryStatus" class="form-control" placeholder="Nhập thứ tự" required
+                        [(ngModel)]="newsCategoryForm.thu_tu" name="thu_tu">
+                </div>
+            </div>
+            <div class="form-actions">
+                <button type="submit" class="btn-admin btn-primary-admin" (click)="updateNewsCategory()">Cập Nhật Danh
+                    Mục</button>
+                <button type="button" class="btn-admin btn-secondary-admin" id="cancelBtn"
+                    [routerLink]="['/admin/news-category']">Hủy
+                    Bỏ</button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,70 @@
+<div class="signup-container">
+  <div class="signup-image-container">
+    <img src="https://img.freepik.com/free-vector/sign-concept-illustration_114360-125.jpg" alt="Sign Up Illustration"
+      class="signup-illustration">
+  </div>
+  <div class="signup-form-container">
+    <div class="signup-header">
+      <img src="https://cdn-icons-png.flaticon.com/512/5087/5087579.png" alt="Logo" class="logo">
+      <h2>Đăng Ký</h2>
+      <p>Tạo tài khoản mới để trải nghiệm dịch vụ của chúng tôi</p>
+    </div>
+
+    <form class="signup-form" (ngSubmit)="submitSignUp(form)" #form="ngForm">
+      <h2 style="color: #2c3e50; text-align: center;">{{thong_bao}}</h2>
+      <div class="form-group">
+        <label for="fullname">Họ và tên</label>
+        <input type="text" id="fullname" name="ho_ten" placeholder="Nhập họ và tên của bạn" required
+          [(ngModel)]="user.ho_ten">
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Nhập email của bạn" required [(ngModel)]="user.email">
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Số điện thoại</label>
+        <input type="tel" id="phone" name="dien_thoai" placeholder="Nhập số điện thoại của bạn" required
+          [(ngModel)]="user.dien_thoai">
+      </div>
+
+      <div class="form-group">
+        <label for="password">Mật khẩu</label>
+        <input type="password" id="password" name="mat_khau" placeholder="Tạo mật khẩu" required
+          [(ngModel)]="user.mat_khau">
+      </div>
+
+      <div class="form-group">
+        <label for="confirm-password">Xác nhận mật khẩu</label>
+        <input type="password" id="confirm-password" name="nhap_lai_mat_khau" placeholder="Nhập lại mật khẩu" required
+          [(ngModel)]="user.nhap_lai_mat_khau">
+      </div>
+
+      <div class="terms">
+        <input type="checkbox" id="terms" required>
+        <label for="terms">Tôi đồng ý với <a href="#">Điều khoản dịch vụ</a> và <a href="#">Chính sách bảo
+            mật</a></label>
+      </div>
+      <button type="submit" class="signup-button">Đăng Ký</button>
+    </form>
+
+    <div class="social-signup">
+      <p>Hoặc đăng ký với</p>
+      <div class="social-buttons">
+        <button class="social-button google">
+          <img src="https://cdn-icons-png.flaticon.com/512/2991/2991148.png" alt="Google" class="social-icon">
+          Google
+        </button>
+        <button class="social-button facebook">
+          <img src="https://cdn-icons-png.flaticon.com/512/5968/5968764.png" alt="Facebook" class="social-icon">
+          Facebook
+        </button>
+      </div>
+    </div>
+
+    <div class="login-link">
+      <p>Đã có tài khoản? <a routerLink="/sign-in">Đăng nhập ngay</a></p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,41 @@
+<header style="background: #fff;" class="header-admin">
+    <ng-container *ngIf="ready">
+        <button class="toggle-sidebar">
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="header-admin-actions">
+            <div class="header-admin-search">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Search...">
+            </div>
+            <div class="header-admin-icons">
+                <a href="#" class="header-admin-icon">
+                    <i class="far fa-bell"></i>
+                    <span class="badge">3</span>
+                </a>
+                <a href="#" class="header-admin-icon">
+                    <i class="far fa-envelope"></i>
+                    <span class="badge">5</span>
+                </a>
+            </div>
+            <div class="user-profile" (mouseenter)="showDropdown = true" (mouseleave)="showDropdown = false">
+                <div class="user-info">
+                    <div class="user-name">{{ user.name || 'Tài khoản' }}</div>
+                    <div class="user-role">{{ user.email || 'Email' }}</div>
+                </div>
+                <div class="user-avatar">
+                    <i class="fas fa-user"></i>
+                </div>
+
+                <!-- Dropdown menu -->
+                <ul class="user-dropdown" *ngIf="showDropdown">
+                    <li *ngIf="!isLoggedIn()" (click)="goToLogin()">Đăng nhập</li>
+                    <li *ngIf="isLoggedIn()" (click)="logout()">Đăng xuất</li>
+                    <li> <span>Tài khoản</span> </li>
+                    <li> <span>Thông báo</span> </li>
+                    <li> <span>Cài đặt</span> </li>
+                </ul>
+            </div>
+        </div>
+    </ng-container>
+</header>

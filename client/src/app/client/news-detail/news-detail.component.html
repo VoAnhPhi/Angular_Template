@@ -1,0 +1,299 @@
+<section class="page-banner"
+    style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('{{news.hinh}}') no-repeat center center; background-size: cover">
+    <div class="container">
+        <h1>{{news.tieu_de}}</h1>
+        <p>{{news.mo_ta}}</p>
+    </div>
+</section>
+
+<!-- Breadcrumb -->
+<div class="breadcrumb-container container">
+    <ul class="breadcrumb">
+        <li><a href="">Trang chủ</a></li>
+        <li><a href="news">Tin tức</a></li>
+        <li>{{news.tieu_de}}</li>
+    </ul>
+</div>
+
+<!-- Main Content -->
+<div class="main-content container">
+    <!-- News Detail Section -->
+    <div class="news-detail-section">
+        <!-- News Article -->
+        <article class="news-article">
+            <h1 class="article-title">{{news.tieu_de}}</h1>
+            <div class="article-meta">
+                <span class="article-date"><i class="far fa-calendar-alt"></i>{{news.ngay}}</span>
+                <span class="article-author"><i class="far fa-user"></i>Admin</span>
+                <span class="article-category"><i class="far fa-folder"></i>{{news.id_loai}}</span>
+                <span class="article-comments"><i class="far fa-comments"></i> {{news.luot_xem}} bình luận</span>
+            </div>
+            <div class="article-featured-image">
+                <img src="{{news.hinh}}" alt="iPhone 15 Pro">
+            </div>
+            <div class="article-content">
+                <p class="article-excerpt">{{news.mo_ta}}</p>
+                <h2>{{news.mo_ta}}</h2>
+                <p [innerHTML]="news.noi_dung"></p>
+
+                <div class="article-tags">
+                    <span class="tags-title">Thẻ:</span>
+                    <a href="#">iPhone</a>
+                    <a href="#">Apple</a>
+                    <a href="#">iPhone 15 Pro</a>
+                    <a href="#">Smartphone</a>
+                </div>
+
+                <div class="article-share">
+                    <span class="share-title">Chia sẻ:</span>
+                    <a href="#" class="share-link facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="share-link twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="share-link linkedin"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="share-link pinterest"><i class="fab fa-pinterest-p"></i></a>
+                </div>
+            </div>
+        </article>
+
+        <!-- Author Bio -->
+        <div class="author-bio">
+            <div class="author-image">
+                <img src="images/author.jpg" alt="Admin">
+            </div>
+            <div class="author-info">
+                <h3>Về tác giả</h3>
+                <h4>Admin</h4>
+                <p>Chuyên gia công nghệ với hơn 10 năm kinh nghiệm trong lĩnh vực công nghệ thông tin và thiết bị di
+                    động. Thường xuyên cập nhật và đánh giá những sản phẩm công nghệ mới nhất trên thị trường.</p>
+                <div class="author-social">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Related Posts -->
+        <div class="related-posts">
+            <h3>Bài viết liên quan</h3>
+            <div class="related-posts-grid">
+                <div class="related-post-item" *ngFor="let news of relatedNews; let i = index">
+                    <div class="related-post-image">
+                        <img src="{{news.hinh}}" alt="Tin tức liên quan">
+                    </div>
+                    <div class="related-post-content">
+                        <h4><a href="news_detail/{{news.slug}}">{{news.tieu_de}}</a></h4>
+                        <span class="post-date"><i class="far fa-calendar-alt"></i> {{news.ngay}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Comments Section -->
+        <div class="comments-section">
+            <h3>Bình luận (24)</h3>
+
+            <!-- Comment List -->
+            <div class="comment-list">
+                <div class="comment-item">
+                    <div class="comment-avatar">
+                        <img src="images/user1.jpg" alt="Người dùng">
+                    </div>
+                    <div class="comment-content">
+                        <div class="comment-info">
+                            <h4 class="commenter-name">Nguyễn Văn A</h4>
+                            <span class="comment-date">15/06/2023, 14:30</span>
+                        </div>
+                        <div class="comment-text">
+                            <p>Thật tuyệt vời! Tôi đã chờ đợi iPhone 15 Pro từ rất lâu. Đặc biệt là camera với zoom 5x
+                                trên bản Pro Max sẽ rất hữu ích cho chuyến du lịch sắp tới của tôi.</p>
+                        </div>
+                        <div class="comment-actions">
+                            <a href="#" class="reply-btn">Trả lời</a>
+                            <a href="#" class="like-btn"><i class="far fa-thumbs-up"></i> 5</a>
+                        </div>
+
+                        <!-- Reply Comment -->
+                        <div class="reply-comment">
+                            <div class="comment-avatar">
+                                <img src="images/user2.jpg" alt="Người dùng">
+                            </div>
+                            <div class="comment-content">
+                                <div class="comment-info">
+                                    <h4 class="commenter-name">Trần Thị B</h4>
+                                    <span class="comment-date">15/06/2023, 15:10</span>
+                                </div>
+                                <div class="comment-text">
+                                    <p>Tôi cũng rất thích tính năng camera mới, nhưng giá bán khá cao. Bạn có nghĩ rằng
+                                        nó xứng đáng với mức giá đó không?</p>
+                                </div>
+                                <div class="comment-actions">
+                                    <a href="#" class="reply-btn">Trả lời</a>
+                                    <a href="#" class="like-btn"><i class="far fa-thumbs-up"></i> 2</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Reply Comment -->
+                        <div class="reply-comment">
+                            <div class="comment-avatar">
+                                <img src="images/user1.jpg" alt="Người dùng">
+                            </div>
+                            <div class="comment-content">
+                                <div class="comment-info">
+                                    <h4 class="commenter-name">Nguyễn Văn A</h4>
+                                    <span class="comment-date">15/06/2023, 16:05</span>
+                                </div>
+                                <div class="comment-text">
+                                    <p>Theo tôi, với những cải tiến về camera và chip A16 Bionic, cùng với khung titan
+                                        bền hơn, nhẹ hơn, thì mức giá này khá hợp lý cho một flagship mới nhất từ Apple.
+                                    </p>
+                                </div>
+                                <div class="comment-actions">
+                                    <a href="#" class="reply-btn">Trả lời</a>
+                                    <a href="#" class="like-btn"><i class="far fa-thumbs-up"></i> 3</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="comment-item">
+                    <div class="comment-avatar">
+                        <img src="images/user3.jpg" alt="Người dùng">
+                    </div>
+                    <div class="comment-content">
+                        <div class="comment-info">
+                            <h4 class="commenter-name">Lê Văn C</h4>
+                            <span class="comment-date">15/06/2023, 17:20</span>
+                        </div>
+                        <div class="comment-text">
+                            <p>Tôi đang sử dụng iPhone 13 Pro, không biết có nên nâng cấp lên iPhone 15 Pro không? Có ai
+                                có so sánh chi tiết giữa hai model này không?</p>
+                        </div>
+                        <div class="comment-actions">
+                            <a href="#" class="reply-btn">Trả lời</a>
+                            <a href="#" class="like-btn"><i class="far fa-thumbs-up"></i> 7</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Comment Form -->
+            <div class="comment-form">
+                <h3>Để lại bình luận</h3>
+                <form>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Họ tên*</label>
+                            <input type="text" id="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email*</label>
+                            <input type="email" id="email" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="comment">Bình luận*</label>
+                        <textarea id="comment" rows="5" required></textarea>
+                    </div>
+                    <div class="form-group checkbox-wrapper">
+                        <input type="checkbox" id="save-info">
+                        <label for="save-info">Lưu thông tin cho lần bình luận sau</label>
+                    </div>
+                    <button type="submit" class="submit-btn">Gửi bình luận</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <!-- Search Section -->
+        <section class="sidebar-search">
+            <h2>Tìm kiếm</h2>
+            <form>
+                <div class="search-box">
+                    <input type="text" placeholder="Tìm kiếm tin tức...">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </div>
+            </form>
+        </section>
+
+        <!-- Categories Section -->
+        <section class="sidebar-categories">
+            <h2>Danh mục</h2>
+            <ul class="category-list" *ngFor="let category of categories_news; let i = index">
+                <li><a href="#">{{category.ten_loai}} <span>(15)</span></a></li>
+            </ul>
+        </section>
+
+        <!-- Recent Posts Section -->
+        <section class="sidebar-recent">
+            <h2>Bài viết gần đây</h2>
+            <div class="recent-posts">
+                <div class="recent-post-item">
+                    <div class="recent-post-image">
+                        <img src="images/news1.jpg" alt="Bài viết gần đây">
+                    </div>
+                    <div class="recent-post-info">
+                        <h4><a href="news_detail.html">Ra mắt iPhone 15 Pro với nhiều tính năng đột phá mới</a></h4>
+                        <span class="post-date"><i class="far fa-calendar-alt"></i> 15/06/2023</span>
+                    </div>
+                </div>
+                <div class="recent-post-item">
+                    <div class="recent-post-image">
+                        <img src="images/news2.jpg" alt="Bài viết gần đây">
+                    </div>
+                    <div class="recent-post-info">
+                        <h4><a href="news_detail.html">Samsung ra mắt Galaxy Z Fold 5 với màn hình gập không nếp gấp</a>
+                        </h4>
+                        <span class="post-date"><i class="far fa-calendar-alt"></i> 10/06/2023</span>
+                    </div>
+                </div>
+                <div class="recent-post-item">
+                    <div class="recent-post-image">
+                        <img src="images/news3.jpg" alt="Bài viết gần đây">
+                    </div>
+                    <div class="recent-post-info">
+                        <h4><a href="news_detail.html">Chương trình khuyến mãi lớn nhân dịp khai trương chi nhánh
+                                mới</a></h4>
+                        <span class="post-date"><i class="far fa-calendar-alt"></i> 05/06/2023</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Popular Tags Section -->
+        <section class="sidebar-tags">
+            <h2>Thẻ phổ biến</h2>
+            <div class="tags-cloud">
+                <a href="#">Smartphone</a>
+                <a href="#">Laptop</a>
+                <a href="#">Apple</a>
+                <a href="#">Samsung</a>
+                <a href="#">Gaming</a>
+                <a href="#">Phụ kiện</a>
+                <a href="#">Khuyến mãi</a>
+                <a href="#">Công nghệ</a>
+                <a href="#">Đánh giá</a>
+            </div>
+        </section>
+
+        <!-- Subscribe Section -->
+        <section class="sidebar-subscribe">
+            <h2>Đăng ký nhận tin</h2>
+            <p>Đăng ký để nhận thông tin mới nhất về sản phẩm và khuyến mãi từ TechStore</p>
+            <form>
+                <input type="email" placeholder="Email của bạn">
+                <button type="submit">Đăng ký</button>
+            </form>
+        </section>
+
+        <!-- Advertisement Section -->
+        <section class="sidebar-ad">
+            <a href="#">
+                <img src="images/sidebar-ad.jpg" alt="Quảng cáo">
+            </a>
+        </section>
+    </div>
+</div>

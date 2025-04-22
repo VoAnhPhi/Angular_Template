@@ -1,0 +1,130 @@
+<div class="content">
+    <div class="page-title-container">
+        <h1 class="page-title">Thêm Sản Phẩm</h1>
+        <p class="page-subtitle">Tạo mới sản phẩm</p>
+    </div>
+
+    <!-- Add Product Form -->
+    <div class="form-container">
+        <h2 class="form-title">Thông Tin Sản Phẩm</h2>
+        <form id="productForm">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="productName">Tên Sản Phẩm</label>
+                    <input type="text" id="productName" class="form-control" placeholder="Nhập tên sản phẩm" required
+                        name="ten_sp" [(ngModel)]="product.ten_sp">
+                </div>
+                <div class="form-group">
+                    <label for="productSlug">URL Slug</label>
+                    <input type="text" id="productSlug" class="form-control" placeholder="product-url-slug" name="slug"
+                        [(ngModel)]="product.slug">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="productCategory">Danh Mục</label>
+                    <select id="productCategory" class="form-control" required name="id_loai"
+                        [(ngModel)]="product.id_loai">
+                        <option value="">Chọn danh mục</option>
+                        <option *ngFor="let category of categories" [value]="category.id">{{category.ten_loai}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="productStatus">Trạng Thái</label>
+                    <select id="productStatus" class="form-control" required name="an_hien"
+                        [(ngModel)]="product.an_hien">
+                        <option value="0">Ẩn</option>
+                        <option value="1">Hiện</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="productStatus">Hot</label>
+                    <select id="productStatus" class="form-control" required name="hot" [(ngModel)]="product.hot">
+                        <option value="0">Không</option>
+                        <option value="1">Có</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="productPrice">Giá (đ)</label>
+                    <input type="number" id="productPrice" class="form-control" placeholder="0.00" step="0.01" min="0"
+                        required name="gia" [(ngModel)]="product.gia">
+                </div>
+                <div class="form-group">
+                    <label for="productSalePrice">Giá Khuyến Mãi (đ)</label>
+                    <input type="number" id="productSalePrice" class="form-control" placeholder="0.00" step="0.01"
+                        min="0" name="gia_km" [(ngModel)]="product.gia_km">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="productDescription">Mô Tả</label>
+                <div class="rich-editor">
+                    <div class="editor-toolbar">
+                        <button type="button" class="editor-button"><i class="fas fa-bold"></i></button>
+                        <button type="button" class="editor-button"><i class="fas fa-italic"></i></button>
+                        <button type="button" class="editor-button"><i class="fas fa-underline"></i></button>
+                        <button type="button" class="editor-button"><i class="fas fa-list-ul"></i></button>
+                        <button type="button" class="editor-button"><i class="fas fa-list-ol"></i></button>
+                        <button type="button" class="editor-button"><i class="fas fa-link"></i></button>
+                        <button type="button" class="editor-button"><i class="fas fa-image"></i></button>
+                    </div>
+                    <textarea class="editor-content" id="productDescription" name="mo_ta"
+                        placeholder="Nhập mô tả sản phẩm ở đây..." [(ngModel)]="product.mo_ta"></textarea>
+                </div>
+            </div>
+            <h2 class="form-title">Thông Tin Thuộc Tính</h2>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="productAttributes">Ram</label>
+                    <input type="text" id="productAttributes" class="form-control" placeholder="Nhập Ram" name="ram"
+                        [(ngModel)]="product.attributes.ram">
+                </div>
+                <div class="form-group">
+                    <label for="productAttributes">CPU</label>
+                    <input type="text" id="productAttributes" class="form-control" placeholder="Nhập CPU" name="cpu"
+                        [(ngModel)]="product.attributes.cpu">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="productAttributes">Đĩa Cứng</label>
+                    <input type="text" id="productAttributes" class="form-control" placeholder="Nhập Đĩa Cứng"
+                        name="dia_cung" [(ngModel)]="product.attributes.dia_cung">
+                </div>
+                <div class="form-group">
+                    <label for="productAttributes">Màu Sắc</label>
+                    <input type="text" id="productAttributes" class="form-control" placeholder="Nhập Màu Sắc"
+                        name="mau_sac" [(ngModel)]="product.attributes.mau_sac">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="productAttributes">Cân Nặng</label>
+                    <input type="text" id="productAttributes" class="form-control" placeholder="Nhập Cân Nặng"
+                        name="can_nang" [(ngModel)]="product.attributes.can_nang">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="productImages">Hình Ảnh</label>
+                <div class="custom-file-upload">
+                    <input type="file" id="productImages" accept="image/*" multiple name="hinh"
+                        (change)="onFileSelected($event)" [(ngModel)]="product.hinh">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                    <span>Click để tải lên hoặc kéo thả</span>
+                    <span>SVG, PNG, JPG hoặc GIF (max. 5MB)</span>
+                </div>
+                <p>Preview hình ảnh:</p>
+                <img [src]="previewImageUrl" alt="Preview"
+                    style="max-width: 200px; border: 1px solid #ccc; padding: 4px;" />
+            </div>
+            <div class="form-actions">
+                <button type="submit" class="btn-admin btn-primary-admin" id="saveProduct" (click)="addProduct()"
+                    [disabled]="isSubmitting">  
+                    {{ isSubmitting ? 'Đang tạo...' : 'Tạo Sản Phẩm' }}
+                </button>
+                <a [routerLink]='["/admin/product"]' class="btn-admin btn-secondary-admin">Hủy</a>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,145 @@
+<div class="content">
+    <div class="page-title-container">
+        <h1 class="page-title">Add User</h1>
+        <p class="page-subtitle">Create a new user account</p>
+    </div>
+
+    <!-- Add User Form -->
+    <div class="form-container">
+        <div class="form-row">
+            <div class="form-group" style="text-align: center; width: 100%;">
+                <div class="customer-avatar-lg">
+                    <img src="https://via.placeholder.com/150" alt="User Avatar" id="avatarPreview">
+                </div>
+                <input type="file" id="userAvatar" accept="image/*" style="display: none;">
+                <button type="button" class="btn-admin btn-primary-admin" style="margin-top: 10px;" id="changeAvatarBtn">
+                    <i class="fas fa-camera"></i> Upload Avatar
+                </button>
+            </div>
+        </div>
+
+        <h2 class="form-title">Account Information</h2>
+        <form id="userForm">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="firstName">First Name</label>
+                    <input type="text" id="firstName" class="form-control" placeholder="First Name" required>
+                </div>
+                <div class="form-group">
+                    <label for="lastName">Last Name</label>
+                    <input type="text" id="lastName" class="form-control" placeholder="Last Name" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" class="form-control" placeholder="Email Address" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" class="form-control" placeholder="Phone Number">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="userRole">Role</label>
+                    <select id="userRole" class="form-control" required>
+                        <option value="">Select Role</option>
+                        <option value="administrator">Administrator</option>
+                        <option value="manager">Manager</option>
+                        <option value="editor">Editor</option>
+                        <option value="customer" selected>Customer</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="userStatus">Status</label>
+                    <select id="userStatus" class="form-control" required>
+                        <option value="1" selected>Active</option>
+                        <option value="0">Inactive</option>
+                    </select>
+                </div>
+            </div>
+
+            <h2 class="form-title">Set Password</h2>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" class="form-control" placeholder="Enter password" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <input type="password" id="confirmPassword" class="form-control" placeholder="Confirm password"
+                        required>
+                </div>
+            </div>
+
+            <h2 class="form-title">Address Information</h2>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="address1">Address Line 1</label>
+                    <input type="text" id="address1" class="form-control" placeholder="Address Line 1">
+                </div>
+                <div class="form-group">
+                    <label for="address2">Address Line 2</label>
+                    <input type="text" id="address2" class="form-control" placeholder="Address Line 2">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="city">City</label>
+                    <input type="text" id="city" class="form-control" placeholder="City">
+                </div>
+                <div class="form-group">
+                    <label for="state">State/Province</label>
+                    <input type="text" id="state" class="form-control" placeholder="State/Province">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="postalCode">Postal Code</label>
+                    <input type="text" id="postalCode" class="form-control" placeholder="Postal Code">
+                </div>
+                <div class="form-group">
+                    <label for="country">Country</label>
+                    <select id="country" class="form-control">
+                        <option value="">Select Country</option>
+                        <option value="US">United States</option>
+                        <option value="CA">Canada</option>
+                        <option value="UK">United Kingdom</option>
+                        <option value="AU">Australia</option>
+                        <option value="DE">Germany</option>
+                        <option value="FR">France</option>
+                    </select>
+                </div>
+            </div>
+
+            <h2 class="form-title">Additional Information</h2>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="newsletter">Newsletter Subscription</label>
+                    <div class="checkbox-container">
+                        <input type="checkbox" id="newsletter" checked>
+                        <label for="newsletter">Subscribe to newsletter</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="notifications">Email Notifications</label>
+                    <div class="checkbox-container">
+                        <input type="checkbox" id="notifications" checked>
+                        <label for="notifications">Receive email notifications</label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="notes">Admin Notes</label>
+                <textarea id="notes" class="form-control"
+                    placeholder="Add any notes about this user (only visible to administrators)" rows="3"></textarea>
+            </div>
+
+            <div class="form-actions">
+                <button type="button" class="btn-admin btn-primary-admin" id="createUser">Create User</button>
+                <a href="users.html" class="btn-admin btn-secondary-admin">Cancel</a>
+            </div>
+        </form>
+    </div>
+</div>

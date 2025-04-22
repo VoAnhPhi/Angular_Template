@@ -1,0 +1,82 @@
+<!-- Breadcrumb Navigation -->
+<div class="breadcrumb-container">
+    <div class="container">
+        <ul class="breadcrumb">
+            <li><a href="/">Trang chủ</a></li>
+            <li><a href="/products-bycategory/1">Danh mục</a></li>
+            <li class="active">{{product.ten_sp}}</li>
+        </ul>
+    </div>
+</div>
+
+<!-- Main Product Detail Section -->
+<section class="product-detail-container container">
+    <div class="product-detail-wrapper">
+        <!-- Product Images Gallery -->
+        <div class="product-gallery">
+            <div class="main-image">
+                <img src="{{product.hinh}}" alt="{{product.ten_sp}}">
+            </div>
+            <div class="thumbnail-images">
+                <div class="thumbnail active">
+                    <img src="{{product.hinh}}" alt="{{product.ten_sp}}">
+                </div>
+                <div class="thumbnail">
+                    <img src="{{product.hinh}}" alt="{{product.ten_sp}}">
+                </div>
+                <div class="thumbnail">
+                    <img src="{{product.hinh}}" alt="{{product.ten_sp}}">
+                </div>
+            </div>
+        </div>
+
+        <!-- Product Information -->
+        <div class="product-info">
+            <h1 class="product-title">{{product.ten_sp}}</h1>
+            <div class="product-meta">
+                <div class="product-rating">
+                    <div class="stars">★★★★☆</div>
+                    <span class="rating-count-info">{{product.luot_xem}} lượt xem</span>
+                </div>
+                <div class="product-sku">
+                    <span>Mã SP: {{product.id}}</span>
+                </div>
+                <div class="product-availability">
+                    <span class="in-stock">Còn hàng</span>
+                </div>
+            </div>
+
+            <div class="product-price">
+                <span class="current-price">{{product.gia ? product.gia.toLocaleString("vi-VN") : 'Liên Hệ'}}₫</span>
+                <span class="original-price">{{product.gia_km ? product.gia_km.toLocaleString("vi-VN") : 'Liên Hệ'}}₫</span>
+                <span class="discount-badge">-20%</span>
+            </div>
+
+            <div class="product-short-description">
+                <p>{{product.mo_ta}}</p>
+            </div>
+
+            <div class="product-actions">
+                <button class="btn add-to-cart" (click)="this.cartService.addToCart(product)">  
+                    <i class="fa fa-shopping-cart"></i> Thêm vào giỏ hàng
+                </button>
+                <button class="btn buy-now">Mua ngay</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Related Products -->
+<section class="related-products container">
+    <h2 class="section-title">Sản phẩm liên quan</h2>
+    <div class="products-grid">
+        <div class="product-item" *ngFor="let product of similarProducts">
+            <img src="{{product.hinh}}" alt="{{product.ten_sp}}">
+            <a href="/product/{{product.slug}}">
+                <h3>{{product.ten_sp}}</h3>
+            </a>
+            <p class="price">{{product.gia ? product.gia.toLocaleString("vi-VN") : 'Liên Hệ'}}₫</p>
+            <button class="add-to-cart" (click)="this.cartService.addToCart(product)">Thêm vào giỏ</button>
+        </div>
+    </div>
+</section>

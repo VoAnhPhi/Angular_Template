@@ -1,0 +1,136 @@
+<!-- Hero Banner -->
+<section class="hero-banner">
+    <div class="hero-content">
+        <h1>Khám phá thế giới công nghệ</h1>
+        <p>Sản phẩm chất lượng cao với giá cả hợp lý</p>
+        <button class="shop-now-btn">Mua sắm ngay</button>
+    </div>
+</section>
+
+<section class="banner-section">
+    <div class="banner-container">
+        <div class="banner-slider">
+            <div class="banner-slide active">
+                <div class="banner-content">
+                    <h2>Khuyến mãi mùa hè</h2>
+                    <p>Giảm giá lên đến 50% cho tất cả sản phẩm điện tử</p>
+                    <a href="products.html" class="btn banner-btn">Mua ngay</a>
+                </div>
+                <div class="banner-image">
+                    <img src="https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?w=700&auto=format&fit=crop"
+                        alt="Khuyến mãi mùa hè">
+                </div>
+            </div>
+            <div class="banner-slide">
+                <div class="banner-content">
+                    <h2>Sản phẩm mới</h2>
+                    <p>Khám phá các sản phẩm công nghệ mới nhất</p>
+                    <a href="products.html" class="btn banner-btn">Xem ngay</a>
+                </div>
+                <div class="banner-image">
+                    <img src="https://images.unsplash.com/photo-1593642702821-c8da6771f0c6?q=80&w=2664&auto=format&fit=crop"
+                        alt="Sản phẩm mới">
+                </div>
+            </div>
+            <div class="banner-slide">
+                <div class="banner-content">
+                    <h2>Miễn phí vận chuyển</h2>
+                    <p>Cho đơn hàng trên 1.000.000₫</p>
+                    <a href="products.html" class="btn banner-btn">Mua sắm ngay</a>
+                </div>
+                <div class="banner-image">
+                    <img src="https://images.unsplash.com/photo-1566576721346-d4a3b4eaeb55?q=80&w=2565&auto=format&fit=crop"
+                        alt="Miễn phí vận chuyển">
+                </div>
+            </div>
+        </div>
+        <div class="banner-controls">
+            <button class="banner-prev">&lt;</button>
+            <div class="banner-dots">
+                <span class="dot active" data-slide="0"></span>
+                <span class="dot" data-slide="1"></span>
+                <span class="dot" data-slide="2"></span>
+            </div>
+            <button class="banner-next">&gt;</button>
+        </div>
+    </div>
+</section>
+
+<!-- Featured Categories -->
+<section class="featured-categories">
+    <div class="container">
+        <h2 class="section-title">Danh mục nổi bật</h2>
+        <div class="category-grid">
+            <div class="category-card">
+                <img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?q=80&w=2127&auto=format&fit=crop"
+                    alt="Điện thoại">
+                <h3>Điện thoại</h3>
+            </div>
+            <div class="category-card">
+                <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?q=80&w=2071&auto=format&fit=crop"
+                    alt="Laptop">
+                <h3>Laptop</h3>
+            </div>
+            <div class="category-card">
+                <img src="https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?q=80&w=1974&auto=format&fit=crop"
+                    alt="Tai nghe">
+                <h3>Tai nghe</h3>
+            </div>
+            <div class="category-card">
+                <img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?q=80&w=1964&auto=format&fit=crop"
+                    alt="Smartwatch">
+                <h3>Đồng hồ thông minh</h3>
+            </div>
+        </div>
+    </div>
+</section>
+
+<main class="container main-content">
+    <!-- Sidebar: Danh mục & Lọc theo giá -->
+    <aside class="sidebar">
+        <!-- Danh mục -->
+        <section class="category">
+            <h2>Danh mục</h2>
+            <app-category></app-category>
+        </section>
+        <!-- Lọc theo giá -->
+        <section class="price-filter">
+            <h2>Lọc theo giá</h2>
+            <div class="filter-inputs">
+                <input type="number" name="min-price" placeholder="Giá thấp nhất">
+                <input type="number" name="max-price" placeholder="Giá cao nhất">
+            </div>
+            <button type="button" class="btn filter-btn">Áp dụng</button>
+        </section>
+    </aside>
+    <!-- Sản phẩm & Sắp xếp -->
+    <section class="products-section">
+        <!-- Thanh sắp xếp -->
+        <div class="sort-bar">
+            <span>Sắp xếp theo:</span>
+            <ul>
+                <li><a href="#" class="active">Mới nhất</a></li>
+                <li><a href="#">Bán chạy</a></li>
+                <li><a href="#">Giá tăng dần</a></li>
+                <li><a href="#">Giá giảm dần</a></li>
+            </ul>
+        </div>
+
+        <!-- Lưới sản phẩm -->
+        <app-products-hot></app-products-hot>
+
+        <!-- Nút xem thêm -->
+        <div class="view-more">
+            <button class="view-more-btn">Xem thêm sản phẩm</button>
+        </div>
+    </section>
+</main>
+
+<!-- Promotional Banner -->
+<section class="promo-banner">
+    <div class="promo-content">
+        <h2>Giảm giá đến 30%</h2>
+        <p>Cho tất cả sản phẩm Apple trong tháng này</p>
+        <button class="promo-btn">Xem ngay</button>
+    </div>
+</section>

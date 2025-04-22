@@ -1,0 +1,31 @@
+<header>
+    <div class="container header-container">
+        <div class="logo">
+            <h1><a href="index.html">Electronics Shop</a></h1>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="">Trang chủ</a></li>
+                <li><a href="product-page">Sản phẩm</a></li>
+                <li><a href="about">Giới thiệu</a></li>
+                <li><a href="contact">Liên hệ</a></li>
+                <li><a href="news">Tin tức</a></li>
+            </ul>
+        </nav>
+        <div class="header-actions">
+            <form class="search-form" action="search" method="get">
+                <input type="text" name="key" placeholder="Tìm kiếm sản phẩm...">
+                <button type="submit">Tìm</button>
+            </form>
+            <div class="user-actions">
+                <a href="cart" class="cart">Giỏ Hàng
+                    <span class="cart-count" *ngIf="getCartCount() > 0">{{ getCartCount() }}</span>
+                </a>
+                <a *ngIf="user; else loginBlock" routerLink="account" class="account">Tài Khoản</a>
+                <ng-template #loginBlock>
+                    <a routerLink="sign-in" class="account">Đăng Nhập</a>
+                </ng-template>
+            </div>
+        </div>
+    </div>
+</header>

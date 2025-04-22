@@ -1,0 +1,57 @@
+<!-- Cart Section -->
+<main class="cart-section" *ngIf="cartData.items.length == 0">
+    <div class="container">
+        <h1>Giỏ Hàng Của Bạn Đang Trống</h1>
+        <a routerLink="/" class="btn-primary btn-primary-cart">Mua Hàng Ngay</a>
+    </div>
+</main>
+
+<main class="cart-section" *ngIf="cartData.items.length > 0">
+
+
+    <div class="container">
+        <h1>Giỏ Hàng Của Bạn</h1>
+
+        <div class="cart-container">
+            <div class="cart-items">
+                <!-- Cart Item Template -->
+                <div class="cart-item" *ngFor="let product of cartData.items">
+                    <img src="{{product.hinh}}" alt="Product Image" class="item-image">
+                    <div class="item-details">
+                        <h3>{{product.ten_sp}}</h3>
+                        <p class="item-price">{{product.gia_mua.toLocaleString('vi-VN')}}₫</p>
+                    </div>
+                    <div class="quantity-controls">
+                        <button class="quantity-btn minus"
+                            (click)="updateQuantity(product.id, product.so_luong - 1)">-</button>
+                        <input type="number" value="1" min="1" class="quantity-input" [(ngModel)]="product.so_luong"
+                            (change)="updateQuantity(product.id, product.so_luong)">
+                        <button class="quantity-btn plus"
+                            (click)="updateQuantity(product.id, product.so_luong + 1)">+</button>
+                    </div>
+                    <p class="item-total">{{(product.gia_mua * product.so_luong).toLocaleString('vi-VN')}}đ</p>
+                    <a href="cart" class="remove-item" (click)="deleteProduct(product.id)"><i
+                            class="fas fa-trash"></i></a>
+                </div>
+            </div>
+
+            <!-- Cart Summary -->
+            <div class="cart-summary">
+                <h2>Tổng đơn hàng</h2>
+                <div class="summary-item" *ngIf="cartData.subtotal > 0">
+                    <span>Tổng tiền:</span>
+                    <span>{{cartData.subtotal.toLocaleString('vi-VN')}}đ</span>
+                </div>
+                <div class="summary-item" *ngIf="cartData.shipping > 0">
+                    <span>Phí vận chuyển:</span>
+                    <span>{{cartData.shipping.toLocaleString('vi-VN')}}đ</span>
+                </div>
+                <div class="summary-item total" *ngIf="cartData.subtotal > 0">
+                    <span>Tổng cộng:</span>
+                    <span>{{cartData.total.toLocaleString('vi-VN')}}đ</span>
+                </div>
+                <button routerLink="/checkout" class="checkout-btn">Thanh toán ngay</button>
+            </div>
+        </div>
+    </div>
+</main>

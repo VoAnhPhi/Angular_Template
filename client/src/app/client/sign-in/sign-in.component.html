@@ -1,0 +1,53 @@
+<div class="login-container">
+    <div class="login-image-container">
+        <img src="https://img.freepik.com/free-vector/mobile-login-concept-illustration_114360-83.jpg" alt="Login Illustration" class="login-illustration">
+    </div>
+    <div class="login-form-container">
+        <div class="login-header">
+            <img src="https://cdn-icons-png.flaticon.com/512/5087/5087579.png" alt="Logo" class="logo">
+            <h2>Đăng Nhập</h2>
+            <p>Chào mừng bạn quay trở lại!</p>
+        </div>
+
+        <form class="login-form" (ngSubmit)="submitSignIn()">
+            <h2 style="color: #2c3e50; text-align: center;">{{thong_bao}}</h2>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" name="email" placeholder="Nhập email của bạn" required [(ngModel)]="user.email">
+            </div>
+
+            <div class="form-group">
+                <label for="password">Mật khẩu</label>
+                <input type="password" name="mat_khau" placeholder="Nhập mật khẩu của bạn" required [(ngModel)]="user.mat_khau">
+            </div>
+
+            <div class="form-options">
+                <div class="remember-me">
+                    <input type="checkbox" id="remember">
+                    <label for="remember">Ghi nhớ đăng nhập</label>
+                </div>
+                <a href="#" class="forgot-password">Quên mật khẩu?</a>
+            </div>
+
+            <button type="submit" class="login-button">Đăng Nhập</button>
+        </form>
+
+        <div class="social-login">
+            <p>Hoặc đăng nhập với</p>
+            <div class="social-buttons">
+                <button class="social-button google">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2991/2991148.png" alt="Google" class="social-icon">
+                    Google
+                </button>
+                <button class="social-button facebook">
+                    <img src="https://cdn-icons-png.flaticon.com/512/5968/5968764.png" alt="Facebook" class="social-icon">
+                    Facebook
+                </button>
+            </div>
+        </div>
+
+        <div class="register-link">
+            <p>Chưa có tài khoản? <a routerLink="/sign-up">Đăng ký ngay</a></p>
+        </div>
+    </div>
+</div>

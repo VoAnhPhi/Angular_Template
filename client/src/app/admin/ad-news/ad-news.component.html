@@ -1,0 +1,94 @@
+<div class="content">
+    <div class="page-title-container">
+        <h1 class="page-title">News</h1>
+        <p class="page-subtitle">Manage news articles</p>
+    </div>
+
+    <!-- News Table -->
+    <div class="data-table-container">
+        <div class="table-header-admin">
+            <div class="table-title">Tất Cả Bài Viết Tin Tức</div>
+            <div class="table-actions">
+                <div class="search-box-admin">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search news...">
+                </div>
+                <a [routerLink]="['/admin/news-add']" class="btn-admin btn-primary-admin">
+                    <i class="fas fa-plus"></i> Thêm Bài Viết
+                </a>
+                <a [routerLink]="['/admin/news-trash']" class="btn-admin btn-danger-admin">
+                    <i class="fas fa-trash"></i> Thùng Rác
+                </a>
+            </div>
+        </div>
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Tiêu Đề</th>
+                    <th>Tóm Tắt</th>
+                    <th>Hình Ảnh</th>
+                    <th>Danh Mục</th>
+                    <th>Ngày Đăng</th>
+                    <th>Trạng Thái</th>
+                    <th>Hành Động</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let news of news">
+                    <td>{{news.id}}</td>
+                    <td>
+                        <div class="news-info-admin">
+                            <strong>{{news.tieu_de}}</strong>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="news-info-admin description-news">
+                            <div [innerHTML]="news.mo_ta"></div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="product-image">
+                            <img src="{{news.hinh}}" alt="Article Image">
+                        </div>
+                    </td>
+                    <td>{{news.category}}</td>
+                    <td>{{news.ngay}}</td>
+                    <td>
+                        <ng-container *ngIf="news.an_hien == 1">
+                            <span class="status-badge status-delivered">Hiển Thị</span>
+                        </ng-container>
+                        <ng-container *ngIf="news.an_hien == 0">
+                            <span class="status-badge status-cancelled">Ẩn</span>
+                        </ng-container>
+                    </td>
+                    <td>
+                        <div class="action-btns">
+                            <a [routerLink]="['/admin/news-edit', news.id]" class="btn-icon btn-edit"><i class="fas fa-edit"></i></a>
+                            <button class="btn-icon btn-danger-admin" (click)="deleteNews(news.id)"><i class="fas fa-trash"></i></button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Pagination -->
+        <div class="pagination-container">
+            <ul class="pagination">
+                <li class="page-item disabled">
+                    <a href="#" class="page-link">
+                        <i class="fas fa-angle-left"></i>
+                    </a>
+                </li>
+                <li class="page-item active"><a href="#" class="page-link">1</a></li>
+                <li class="page-item"><a href="#" class="page-link">2</a></li>
+                <li class="page-item"><a href="#" class="page-link">3</a></li>
+                <li class="page-item">
+                    <a href="#" class="page-link">
+                        <i class="fas fa-angle-right"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

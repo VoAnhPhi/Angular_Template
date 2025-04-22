@@ -1,0 +1,85 @@
+<section class="page-banner"
+    style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1503694978374-8a2fa686963a?q=80&w=2669&auto=format&fit=crop') no-repeat center center; background-size: cover;">
+    <div class="container">
+        <h1>Tin tức công nghệ</h1>
+        <p>Cập nhật những tin tức mới nhất về công nghệ, sản phẩm và khuyến mãi</p>
+    </div>
+</section>
+
+<div class="main-content container">
+    <div class="news-section">
+        <div class="news-container">
+            <div class="news-grid">
+                <div class="news-item" *ngFor="let news of news_array">
+                    <div class="news-image">
+                        <img src="{{news.hinh}}" alt="Tin tức công nghệ">
+                        <div class="news-date">
+                            <span class="day">15</span>
+                            <span class="month">Th6</span>
+                        </div>
+                    </div>
+                    <div class="news-content">
+                        <div class="news-category">Công nghệ</div>
+                        <h3><a [routerLink]="['/news_detail', news.slug]">{{news.tieu_de}}</a></h3>
+                        <p>{{news.mo_ta}}</p>
+                        <div class="news-meta">
+                            <span><i class="far fa-user"></i> Admin</span>
+                            <span><i class="far fa-comments"></i> {{news.luot_xem}} bình luận</span>
+                        </div>
+                        <a [routerLink]="['/news_detail', news.slug]" class="read-more">Đọc tiếp <i
+                                class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="pagination">
+            <a href="#" class="active">1</a>
+            <a href="#">2</a>
+            <a href="#">3</a>
+            <a href="#" class="next">Trang sau <i class="fas fa-angle-right"></i></a>
+        </div>
+    </div>
+    <div class="sidebar">
+        <section class="sidebar-search">
+            <h2>Tìm kiếm</h2>
+            <form>
+                <div class="search-box">
+                    <input type="text" placeholder="Tìm kiếm tin tức...">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </div>
+            </form>
+        </section>
+
+        <!-- Categories Section -->
+        <section class="sidebar-categories">
+            <h2>Danh mục</h2>
+            <ul class="category-list" *ngFor="let category of categories_news">
+                <li><a href="#">{{category.ten_loai}} <span>(13)</span></a></li>
+            </ul>
+        </section>
+
+        <!-- Recent Posts Section -->
+        <section class="sidebar-recent">
+            <h2>Bài viết gần đây</h2>
+            <div class="recent-posts">
+                <div class="recent-post-item" *ngFor="let news of news_array">
+                    <div class="recent-post-image">
+                        <img src="{{news.hinh}}" alt="Bài viết gần đây">
+                    </div>
+                    <div class="recent-post-info">
+                        <h4><a href="news_detail.html">{{news.tieu_de}}</a></h4>
+                        <span class="post-date"><i class="far fa-calendar-alt"></i> 15/06/2023</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="sidebar-subscribe">
+            <h2>Đăng ký nhận tin</h2>
+            <p>Đăng ký để nhận thông tin mới nhất về sản phẩm và khuyến mãi từ TechStore</p>
+            <form>
+                <input type="email" placeholder="Email của bạn">
+                <button type="submit">Đăng ký</button>
+            </form>
+        </section>
+    </div>
+</div>

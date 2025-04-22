@@ -1,0 +1,29 @@
+<div class="login-container">
+    <div class="login-box">
+        <div class="login-logo">
+            <i class="fas fa-user-shield"></i>
+            <h2>Admin Panel</h2>
+            <p>Please sign in to continue</p>
+        </div>
+        <form id="loginForm" class="login-form" (ngSubmit)="login()">
+            <div class="form-group">
+                <label for="email"><i class="fas fa-user"></i>Nhập Email</label>
+                <input type="text" [(ngModel)]="user.email" name="email" class="form-control" placeholder="Enter your username or email"
+                    required>
+            </div>
+            <div class="form-group">
+                <label for="mat_khau"><i class="fas fa-lock"></i> Mật Khẩu</label>
+                <input type="password" [(ngModel)]="user.mat_khau" name="mat_khau" class="form-control" placeholder="Enter your password" required>
+            </div>
+            <div class="form-group form-options">
+                <div class="remember-me">
+                    <input type="checkbox" id="rememberMe">
+                    <label for="rememberMe">Remember Me</label>
+                </div>
+                <a href="#" class="forgot-password">Forgot Password?</a>
+            </div>
+            <button type="submit" class="btn btn-login">Login</button>
+            <div id="error-message" class="error-message"></div>
+        </form>
+    </div>
+</div>

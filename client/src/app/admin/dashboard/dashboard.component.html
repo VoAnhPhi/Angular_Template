@@ -1,0 +1,225 @@
+<div class="content">
+    <div class="page-title-container">
+        <h1 class="page-title">Trang Quản Trị</h1>
+        <p class="page-subtitle">Chào mừng bạn đến với trang quản trị</p>
+    </div>
+
+    <div class="dashboard-stats">
+        <div class="stat-card">
+            <div class="stat-icon icon-blue">
+                <i class="fas fa-shopping-cart"></i>
+            </div>
+            <div class="stat-content">
+                <div class="stat-value">254</div>
+                <div class="stat-label">Tổng Đơn Hàng</div>
+            </div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-icon icon-green">
+                <i class="fas fa-dollar-sign"></i>
+            </div>
+            <div class="stat-content">
+                <div class="stat-value">$15,200</div>
+                <div class="stat-label">Tổng Doanh Thu</div>
+            </div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-icon icon-orange">
+                <i class="fas fa-users"></i>
+            </div>
+            <div class="stat-content">
+                <div class="stat-value">845</div>
+                <div class="stat-label">Tổng Khách Hàng</div>
+            </div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-icon icon-red">
+                <i class="fas fa-box"></i>
+            </div>
+            <div class="stat-content">
+                <div class="stat-value">128</div>
+                <div class="stat-label">Tổng Sản Phẩm</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Charts -->
+    <div class="charts-container">
+        <div class="chart-card">
+            <div class="chart-header">
+                <div class="chart-title">Tổng Doanh Thu</div>
+                <div class="chart-actions">
+                    <button class="chart-action">Ngày</button>
+                    <button class="chart-action">Tuần</button>
+                    <button class="chart-action active">Tháng</button>
+                    <button class="chart-action">Năm</button>
+                </div>
+            </div>
+            <div class="chart-body">
+                <canvas id="revenueChart"></canvas>
+            </div>
+        </div>
+        <div class="chart-card">
+            <div class="chart-header">
+                <div class="chart-title">Doanh Thu Theo Danh Mục</div>
+            </div>
+            <div class="chart-body">
+                <canvas id="categoryChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <!-- Recent Orders & Activities -->
+    <div class="recent-container">
+        <div class="orders-card">
+            <div class="card-header">
+                <div class="card-title">Đơn Hàng Gần Đây</div>
+                <div class="card-actions">
+                    <a href="orders.html">Xem Tất Cả</a>
+                </div>
+            </div>
+            <table class="orders-table">
+                <thead>
+                    <tr>
+                        <th>Mã Đơn Hàng</th>
+                        <th>Khách Hàng</th>
+                        <th>Ngày</th>
+                        <th>Số Tiền</th>
+                        <th>Trạng Thái</th>
+                        <th>Hành Động</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>#ORD-1234</td>
+                        <td>
+                            <div class="customer-info">
+                                <div class="customer-avatar">
+                                    <img src="https://via.placeholder.com/150" alt="Customer Avatar">
+                                </div>
+                                <span>John Doe</span>
+                            </div>
+                        </td>
+                        <td>Aug 15, 2023</td>
+                        <td>$128.50</td>
+                        <td><span class="status-badge status-delivered">Delivered</span></td>
+                        <td>
+                            <div class="action-btns">
+                                <button class="btn-icon btn-view"><i class="fas fa-eye"></i></button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>#ORD-1235</td>
+                        <td>
+                            <div class="customer-info">
+                                <div class="customer-avatar">
+                                    <img src="https://via.placeholder.com/150" alt="Customer Avatar">
+                                </div>
+                                <span>Jane Smith</span>
+                            </div>
+                        </td>
+                        <td>Aug 16, 2023</td>
+                        <td>$85.25</td>
+                        <td><span class="status-badge status-processing">Processing</span></td>
+                        <td>
+                            <div class="action-btns">
+                                <button class="btn-icon btn-view"><i class="fas fa-eye"></i></button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>#ORD-1236</td>
+                        <td>
+                            <div class="customer-info">
+                                <div class="customer-avatar">
+                                    <img src="https://via.placeholder.com/150" alt="Customer Avatar">
+                                </div>
+                                <span>Michael Johnson</span>
+                            </div>
+                        </td>
+                        <td>Aug 16, 2023</td>
+                        <td>$214.80</td>
+                        <td><span class="status-badge status-pending">Pending</span></td>
+                        <td>
+                            <div class="action-btns">
+                                <button class="btn-icon btn-view"><i class="fas fa-eye"></i></button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>#ORD-1237</td>
+                        <td>
+                            <div class="customer-info">
+                                <div class="customer-avatar">
+                                    <img src="https://via.placeholder.com/150" alt="Customer Avatar">
+                                </div>
+                                <span>Emily Williams</span>
+                            </div>
+                        </td>
+                        <td>Aug 17, 2023</td>
+                        <td>$152.75</td>
+                        <td><span class="status-badge status-cancelled">Cancelled</span></td>
+                        <td>
+                            <div class="action-btns">
+                                <button class="btn-icon btn-view"><i class="fas fa-eye"></i></button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="activities-card">
+            <div class="card-header">
+                <div class="card-title">Hoạt Động Gần Đây</div>
+            </div>
+            <ul class="activities-list">
+                <li class="activity-item">
+                    <div class="activity-icon icon-order">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <div class="activity-content">
+                        <div class="activity-title">Đơn Hàng Mới #ORD-1238 đặt</div>
+                        <div class="activity-time">10 phút trước</div>
+                    </div>
+                </li>
+                <li class="activity-item">
+                    <div class="activity-icon icon-user">
+                        <i class="fas fa-user-plus"></i>
+                    </div>
+                    <div class="activity-content">
+                        <div class="activity-title">Khách Hàng Mới Đăng Ký</div>
+                        <div class="activity-time">1 giờ trước</div>
+                    </div>
+                </li>
+                <li class="activity-item">
+                    <div class="activity-icon icon-product">
+                        <i class="fas fa-box"></i>
+                    </div>
+                    <div class="activity-content">
+                        <div class="activity-title">Cập Nhật Kho Hàng</div>
+                        <div class="activity-time">3 giờ trước</div>
+                    </div>
+                </li>
+                <li class="activity-item">
+                    <div class="activity-icon icon-order">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <div class="activity-content">
+                        <div class="activity-title">Đơn Hàng #ORD-1234 đã Giao</div>
+                        <div class="activity-time">5 giờ trước</div>
+                    </div>
+                </li>
+                <li class="activity-item">
+                    <div class="activity-icon icon-user">
+                        <i class="fas fa-comment"></i>
+                    </div>
+                    <div class="activity-content">
+                        <div class="activity-title">Đánh Giá Mới Từ John Doe</div>
+                        <div class="activity-time">8 giờ trước</div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
