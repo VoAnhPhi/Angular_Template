@@ -1,6 +1,5 @@
-# 🛒 ShopTech-ecommerce (Angular)
-
-ShopTech-ecommerce là một website thương mại điện tử hiện đại được xây dựng bằng Angular, giúp người dùng dễ dàng mua sắm các sản phẩm điện tử với trải nghiệm trực quan và tiện lợi.
+# 🛒 (Angular)
+Đây là một website thương mại điện tử đơn giản được xây dựng bằng Angular, giúp người dùng dễ dàng mua sắm các sản phẩm điện tử với trải nghiệm trực quan và tiện lợi.
 
 ---
 
